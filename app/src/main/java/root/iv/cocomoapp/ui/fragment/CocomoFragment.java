@@ -1,5 +1,6 @@
 package root.iv.cocomoapp.ui.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +16,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import root.iv.cocomoapp.R;
 import root.iv.cocomoapp.cocomo.Cocomo;
+import root.iv.cocomoapp.cocomo.CocomoResult;
 import root.iv.cocomoapp.cocomo.config.Configuration;
 import root.iv.cocomoapp.cocomo.config.Group;
+import root.iv.cocomoapp.ui.activity.ActivityAPI;
 
 public class CocomoFragment extends Fragment {
     @BindView(R.id.groupLanguage)
@@ -54,6 +57,7 @@ public class CocomoFragment extends Fragment {
     @BindView(R.id.groupModel)
     protected ChipGroup groupModel;
     private Configuration configuration;
+    private ActivityAPI activity;
 
     @Nullable
     @Override
@@ -88,9 +92,21 @@ public class CocomoFragment extends Fragment {
     @OnClick(R.id.buttonCalculate)
     public void clickCalculate() {
         Cocomo cocomo = new Cocomo(configuration);
-        cocomo.calculate();
+        CocomoResult result = cocomo.calculate();
+        activity.viewResult(result.getMan(), result.getTime());
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        activity = (ActivityAPI)context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        activity = null;
+    }
 
     public static CocomoFragment getInstance() {
         CocomoFragment fragment = new CocomoFragment();

@@ -8,13 +8,14 @@ import butterknife.ButterKnife;
 import root.iv.cocomoapp.R;
 import root.iv.cocomoapp.ui.fragment.Cocomo2Fragment;
 import root.iv.cocomoapp.ui.fragment.CocomoFragment;
+import root.iv.cocomoapp.ui.fragment.CocomoVisualFragment;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ActivityAPI {
     @BindView(R.id.drawer)
     protected DrawerLayout drawerLayout;
     @BindView(R.id.navigation)
@@ -55,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.mainFrame, Cocomo2Fragment.getInstance())
+                .commit();
+    }
+
+    @Override
+    public void viewResult(double man, double time) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.resultContainer, CocomoVisualFragment.getInstance(man, time))
                 .commit();
     }
 }

@@ -10,10 +10,34 @@ public class Cocomo {
     }
 
     // TODO Сделать ввод KLOC
-    public void calculate() {
-        int KLOC = 25;
+    public CocomoResult calculate() {
+        final int KLOC = 25;
 
+        // Универсальная длина. В строках указанного языка
+        double kLoc = toFixed2(KLOC/configuration.getValue(Group.LANG));
+        final double EAF = eaf();
 
+        double manMonth = 0.0;
+        double timeMonth = 0.0;
+
+        switch (configuration.getModel()) {
+            case NORMAL:
+                manMonth = 3.2 * EAF * Math.pow(kLoc, 1.05);
+                timeMonth = 2.5 * Math.pow(manMonth, 0.38);
+                break;
+
+            case MEDIUM:
+                manMonth = 3 * EAF * Math.pow(kLoc, 1.12);
+                timeMonth = 2.5 * Math.pow(manMonth, 0.35);
+                break;
+
+            case INNER:
+                manMonth = 2.8 * EAF * Math.pow(kLoc, 1.2);
+                timeMonth = 2.5 * Math.pow(manMonth, 0.32);
+                break;
+        }
+
+        return new CocomoResult(manMonth, timeMonth);
     }
 
     public double eaf() {
@@ -37,6 +61,10 @@ public class Cocomo {
         result *= configuration.getValue(Group.TOOL);
         result *= configuration.getValue(Group.SCED);
 
-        return Math.round(result*100)/100.0;
+        return toFixed2(result);
+    }
+
+    private double toFixed2(double x) {
+        return Math.round(x*100)/100.0;
     }
 }
