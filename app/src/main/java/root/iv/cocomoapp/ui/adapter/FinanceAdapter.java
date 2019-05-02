@@ -45,6 +45,11 @@ public class FinanceAdapter extends RecyclerView.Adapter<FinanceAdapter.ViewHold
         notifyItemInserted(count);
     }
 
+    public void append(List<Finance> finance) {
+        for (Finance f : finance)
+            append(f);
+    }
+
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView viewAttrName;

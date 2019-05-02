@@ -43,7 +43,8 @@ public class Group {
         return original[currentIndex];
     }
 
-    public void setCurrentValue(int index) {
+    public Group setCurrentValue(int index) {
         currentIndex = index;
+        return this;
     }
 }

@@ -27,6 +27,8 @@
 
             <com.google.android.material.chip.Chip
                 style="@style/ChipStyle"
+                android:checked="true"
+                android:clickable="false"
                 android:text="@string/normal" />
             <com.google.android.material.chip.Chip
                 style="@style/ChipStyle"

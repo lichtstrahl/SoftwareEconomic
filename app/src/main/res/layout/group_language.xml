@@ -28,6 +28,8 @@
 
             <com.google.android.material.chip.Chip
                 style="@style/ChipStyle"
+                android:checked="true"
+                android:clickable="false"
                 android:text="@string/lg_Asm"/>
 
             <com.google.android.material.chip.Chip

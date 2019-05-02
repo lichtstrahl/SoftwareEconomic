@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
 import androidx.annotation.NonNull;
@@ -64,29 +65,92 @@ public class CocomoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cocomo, container, false);
         ButterKnife.bind(this, view);
-
-        groupLang.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.LANG, n));
-        groupRely.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.RELY, n));
-        groupData.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.DATA, n));
-        groupCplx.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.CPLX, n));
-        groupTime.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.TIME, n));
-        groupStor.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.STOR, n));
-        groupVirt.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.VIRT, n));
-        groupTurn.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.TURN, n));
-        groupAcap.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.ACAP, n));
-        groupAexp.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.AEXP, n));
-        groupPcap.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.PCAP, n));
-        groupVexp.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.VEXP, n));
-        groupLexp.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.LEXP, n));
-        groupModp.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.MODP, n));
-        groupTool.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.TOOL, n));
-        groupSced.setOnCheckedChangeListener((g,n) -> configuration.setConfig(Group.SCED, n));
+        groupLang.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.LANG, n);
+        });
+        groupRely.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.RELY, n);
+        });
+        groupData.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.DATA, n);
+        });
+        groupCplx.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.CPLX, n);
+        });
+        groupTime.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.TIME, n);
+        });
+        groupStor.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.STOR, n);
+        });
+        groupVirt.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.VIRT, n);
+        });
+        groupTurn.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.TURN, n);
+        });
+        groupAcap.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.ACAP, n);
+        });
+        groupAexp.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.AEXP, n);
+        });
+        groupPcap.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.PCAP, n);
+        });
+        groupVexp.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.VEXP, n);
+        });
+        groupLexp.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.LEXP, n);
+        });
+        groupModp.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.MODP, n);
+        });
+        groupTool.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.TOOL, n);
+        });
+        groupSced.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setConfig(Group.SCED, n);
+        });
 
         groupModel.setOnCheckedChangeListener((g,n) -> configuration.setModel(n));
 
         configuration = new Configuration();
 
         return view;
+    }
+
+    private void checkChip(ChipGroup g, int n) {
+        for (int i = 0; i < g.getChildCount(); i++) {
+            Chip c = (Chip) g.getChildAt(i);
+
+            if (c.getId() != n) {
+                c.setChecked(false);
+                c.setClickable(true);
+            }
+
+            if (c.getId() == n) {
+                c.setChecked(true);
+                c.setClickable(false);
+            }
+        }
     }
 
     @OnClick(R.id.buttonCalculate)

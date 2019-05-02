@@ -29,25 +29,25 @@ public class Configuration {
 
 
     private Group[] groupsConfig = new Group[]{
-            new Group(Group.LANG, CONFIG_LANG),
-            new Group(Group.RELY, CONFIG_RELY),
-            new Group(Group.DATA, CONFIG_DATA),
-            new Group(Group.CPLX, CONFIG_CPLX),
-            new Group(Group.TIME, CONFIG_TIME),
-            new Group(Group.STOR, CONFIG_STOR),
-            new Group(Group.VIRT, CONFIG_VIRT),
-            new Group(Group.TURN, CONFIG_TURN),
-            new Group(Group.ACAP, CONFIG_ACAP),
-            new Group(Group.AEXP, CONFIG_AEXP),
-            new Group(Group.PCAP, CONFIG_PCAP),
-            new Group(Group.VEXP, CONFIG_VEXP),
-            new Group(Group.LEXP, CONFIG_LEXP),
-            new Group(Group.MODP, CONFIG_MODP),
-            new Group(Group.TOOL, CONFIG_TOOL),
-            new Group(Group.SCED, CONFIG_SCED)
+            new Group(Group.LANG, CONFIG_LANG).setCurrentValue(0),
+            new Group(Group.RELY, CONFIG_RELY).setCurrentValue(2),
+            new Group(Group.DATA, CONFIG_DATA).setCurrentValue(1),
+            new Group(Group.CPLX, CONFIG_CPLX).setCurrentValue(2),
+            new Group(Group.TIME, CONFIG_TIME).setCurrentValue(0),
+            new Group(Group.STOR, CONFIG_STOR).setCurrentValue(0),
+            new Group(Group.VIRT, CONFIG_VIRT).setCurrentValue(1),
+            new Group(Group.TURN, CONFIG_TURN).setCurrentValue(1),
+            new Group(Group.ACAP, CONFIG_ACAP).setCurrentValue(2),
+            new Group(Group.AEXP, CONFIG_AEXP).setCurrentValue(2),
+            new Group(Group.PCAP, CONFIG_PCAP).setCurrentValue(2),
+            new Group(Group.VEXP, CONFIG_VEXP).setCurrentValue(2),
+            new Group(Group.LEXP, CONFIG_LEXP).setCurrentValue(2),
+            new Group(Group.MODP, CONFIG_MODP).setCurrentValue(2),
+            new Group(Group.TOOL, CONFIG_TOOL).setCurrentValue(2),
+            new Group(Group.SCED, CONFIG_SCED).setCurrentValue(2)
     };
 
-    @Nullable private CocomoModel model;
+    @Nullable private CocomoModel model = CocomoModel.NORMAL;
 
     /**
      *
