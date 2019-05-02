@@ -15,7 +15,14 @@
         toolsList:listitem="@layout/item_finance"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
-
     </androidx.recyclerview.widget.RecyclerView>
+    
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieFinanceDiagram"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/listFinance">
+
+    </com.github.mikephil.charting.charts.PieChart>
 
 </RelativeLayout>
