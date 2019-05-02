@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">COCOMOApp</string>
+    <string name="cocomo">COCOMO</string>
+    <string name="cocomo2">COCOMO II</string>
+    <string name="lg_java">Java</string>
+    <string name="lg_C">C</string>
+    <string name="lg_Python">Python</string>
+    <string name="labelLanguageGroup">Выбор языка</string>
+    <string name="lg_Pascal">Pascal</string>
+    <string name="lg_Asm">Assembler</string>
+    <string name="lg_Cpp">C++</string>
+    <string name="lg_Ada">Ada</string>
 </resources>

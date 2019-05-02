@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_main_head">128dp</dimen>
+    <dimen name="height_chip_group">56dp</dimen>
+    <dimen name="stdMargin">8dp</dimen>
+</resources>

@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "GLOBAL_LOG_TAG", "\"COCOMOApp\"")
     }
     buildTypes {
         release {
@@ -22,9 +23,20 @@ android {
     }
 }
 
+ext {
+    butterKnifeVersion = '10.1.0'
+    lombokVersion = '1.18.6'
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     // ButterKnife
+    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+    // Material Design
+    implementation "com.google.android.material:material:1.0.0"
+    // Lombok
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
 }
