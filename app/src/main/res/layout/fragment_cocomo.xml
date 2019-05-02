@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:layout="http://schemas.android.com/tools">
-    <FrameLayout
-        android:id="@+id/resultContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    xmlns:layout="http://schemas.android.com/tools"
+    android:id="@+id/resultContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -77,6 +79,5 @@
                 android:text="@string/calculate"
                 />
         </RelativeLayout>
-    </FrameLayout>
-
-</ScrollView>
+    </ScrollView>
+</FrameLayout>

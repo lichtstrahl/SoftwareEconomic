@@ -7,11 +7,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import root.iv.cocomoapp.R;
 import root.iv.cocomoapp.ui.fragment.Cocomo2Fragment;
-import root.iv.cocomoapp.ui.fragment.CocomoFragment;
-import root.iv.cocomoapp.ui.fragment.CocomoVisualFragment;
+import root.iv.cocomoapp.ui.fragment.cocomo.CocomoFragment;
+import root.iv.cocomoapp.ui.fragment.cocomo.CocomoVisualFragment;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 

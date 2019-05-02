@@ -1,4 +1,4 @@
-package root.iv.cocomoapp.ui.fragment;
+package root.iv.cocomoapp.ui.fragment.cocomo;
 
 import android.content.Context;
 import android.os.Bundle;
