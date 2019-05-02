@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/labelLanguageGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="@string/labelLanguageGroup"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/stdMargin"/>
+    <HorizontalScrollView
+        android:id="@+id/scrollLanguageGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/labelLanguageGroup"
+        android:padding="5dp">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/groupLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipSpacing="@dimen/stdMargin"
+            app:singleSelection="true"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/lg_Asm"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/lg_C"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/lg_kobol"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/gl_fortran"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/lg_Pascal"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/lg_Cpp"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/lg_java" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/gl_ada"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/gl_access"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/gl_delphi"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/lg_cobra"/>
+
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+</RelativeLayout>

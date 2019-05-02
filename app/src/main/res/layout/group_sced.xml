@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/labelScedGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="@string/labelScedGroup"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/stdMargin"/>
+    <HorizontalScrollView
+        android:id="@+id/scrollScedGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/labelScedGroup"
+        android:padding="5dp">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/groupSced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipSpacing="@dimen/stdMargin"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/extra_low" />
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/low" />
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/normal" />
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/high" />
+            <com.google.android.material.chip.Chip
+                style="@style/ChipStyle"
+                android:text="@string/extra_high" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+</RelativeLayout>

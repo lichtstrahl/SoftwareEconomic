@@ -1,67 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:layout="http://schemas.android.com/tools">
 
-
-    <!-- Language group -->
-    <TextView
-        android:id="@+id/labelLanguageGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/scrollLanguageGroup"
-        android:layout_alignTop="@id/scrollLanguageGroup"
-        android:layout_alignParentStart="true"
-        android:text="@string/labelLanguageGroup"
-        android:gravity="center_vertical"
-        android:layout_margin="@dimen/stdMargin"/>
-
-    <HorizontalScrollView
-        android:id="@+id/scrollLanguageGroup"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@id/labelLanguageGroup"
-        android:padding="5dp">
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/groupLanguage"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/groups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/group_language" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/attrPO"
+                android:textSize="@dimen/bigText"/>
+            <include layout="@layout/group_raly" />
+            <include layout="@layout/group_data" />
+            <include layout="@layout/group_cplx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/attrComputer"
+                android:textSize="@dimen/bigText"/>
+            <include layout="@layout/group_time" />
+            <include layout="@layout/group_stor" />
+            <include layout="@layout/group_virt" />
+            <include layout="@layout/group_turn" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/attrTeam"
+                android:textSize="@dimen/bigText"/>
+            <include layout="@layout/group_acap" />
+            <include layout="@layout/group_aexp" />
+            <include layout="@layout/group_pcap" />
+            <include layout="@layout/group_vexp" />
+            <include layout="@layout/group_lexp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/attrProject"
+                android:textSize="@dimen/bigText"/>
+            <include layout="@layout/group_modp" />
+            <include layout="@layout/group_tool" />
+            <include layout="@layout/group_sced" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/cocomoModel"
+                android:textSize="@dimen/bigText"/>
+            <include layout="@layout/group_model" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/buttonCalculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:chipSpacing="@dimen/stdMargin"
-            app:singleSelection="true">
-            
-            <com.google.android.material.chip.Chip
-                style="@style/ChipStyle"
-                android:text="@string/lg_java" />
+            android:layout_below="@id/groups"
+            android:layout_centerHorizontal="true"
+            android:text="@string/calculate"
+            />
+    </RelativeLayout>
 
-            <com.google.android.material.chip.Chip
-                style="@style/ChipStyle"
-                android:text="@string/lg_C"/>
 
-            <com.google.android.material.chip.Chip
-                style="@style/ChipStyle"
-                android:text="@string/lg_Cpp"/>
-
-            <com.google.android.material.chip.Chip
-                style="@style/ChipStyle"
-                android:text="@string/lg_Pascal"/>
-
-            <com.google.android.material.chip.Chip
-                style="@style/ChipStyle"
-                android:text="@string/lg_Python"/>
-
-            <com.google.android.material.chip.Chip
-                style="@style/ChipStyle"
-                android:text="@string/lg_Asm"/>
-
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
-
-    <Button
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/labelLanguageGroup"/>
-
-</RelativeLayout>
+</ScrollView>
