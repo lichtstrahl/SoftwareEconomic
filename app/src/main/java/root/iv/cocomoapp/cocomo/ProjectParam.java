@@ -6,12 +6,12 @@ import lombok.Data;
  * Статья бюджета
  */
 @Data
-public class Finance {
+public class ProjectParam {
     private double value;
     private String name;
 
-    public static Finance getInstance(String name, double value) {
-        Finance f = new Finance();
+    public static ProjectParam getInstance(String name, double value) {
+        ProjectParam f = new ProjectParam();
         f.value = value;
         f.name = name;
         return f;

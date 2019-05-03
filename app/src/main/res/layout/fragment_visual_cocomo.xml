@@ -7,22 +7,16 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listFinance"
-        xmlns:toolsList="http://schemas.android.com/tools"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        toolsList:listitem="@layout/item_finance"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
-    </androidx.recyclerview.widget.RecyclerView>
-    
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieFinanceDiagram"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/listFinance">
+        android:layout_height="match_parent">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </com.github.mikephil.charting.charts.PieChart>
+        </com.google.android.material.tabs.TabLayout>
+    </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

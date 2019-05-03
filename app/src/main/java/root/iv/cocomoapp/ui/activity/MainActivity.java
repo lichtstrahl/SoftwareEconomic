@@ -8,7 +8,7 @@ import butterknife.ButterKnife;
 import root.iv.cocomoapp.R;
 import root.iv.cocomoapp.ui.fragment.Cocomo2Fragment;
 import root.iv.cocomoapp.ui.fragment.cocomo.CocomoFragment;
-import root.iv.cocomoapp.ui.fragment.cocomo.CocomoVisualFragment;
+import root.iv.cocomoapp.ui.fragment.cocomo.visual.CocomoVisualFragment;
 
 import android.os.Bundle;
 

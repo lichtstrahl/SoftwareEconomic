@@ -12,13 +12,13 @@ import java.util.Locale;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import root.iv.cocomoapp.R;
-import root.iv.cocomoapp.cocomo.Finance;
+import root.iv.cocomoapp.cocomo.ProjectParam;
 
-public class FinanceAdapter extends RecyclerView.Adapter<FinanceAdapter.ViewHolder> {
-    private List<Finance> financeList;
+public class ProjectParamAdapter extends RecyclerView.Adapter<ProjectParamAdapter.ViewHolder> {
+    private List<ProjectParam> financeList;
     private LayoutInflater inflater;
 
-    public FinanceAdapter(LayoutInflater inflater) {
+    public ProjectParamAdapter(LayoutInflater inflater) {
         financeList = new LinkedList<>();
         this.inflater = inflater;
     }
@@ -39,14 +39,14 @@ public class FinanceAdapter extends RecyclerView.Adapter<FinanceAdapter.ViewHold
         return financeList.size();
     }
 
-    public void append(Finance finance) {
+    public void append(ProjectParam finance) {
         int count = financeList.size();
         financeList.add(finance);
         notifyItemInserted(count);
     }
 
-    public void append(List<Finance> finance) {
-        for (Finance f : finance)
+    public void append(List<ProjectParam> finance) {
+        for (ProjectParam f : finance)
             append(f);
     }
 
@@ -63,7 +63,7 @@ public class FinanceAdapter extends RecyclerView.Adapter<FinanceAdapter.ViewHold
         }
 
         public void bind(int pos) {
-            Finance finance = financeList.get(pos);
+            ProjectParam finance = financeList.get(pos);
             viewAttrName.setText(finance.getName());
             viewValue.setText(String.format(Locale.ENGLISH, "%5.2f", finance.getValue()));
         }
