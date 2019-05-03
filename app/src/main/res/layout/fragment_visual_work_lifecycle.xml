@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        toolsList:listitem="@layout/item_finance">
+        toolsList:listitem="@layout/item_project_param">
 
     </androidx.recyclerview.widget.RecyclerView>
 

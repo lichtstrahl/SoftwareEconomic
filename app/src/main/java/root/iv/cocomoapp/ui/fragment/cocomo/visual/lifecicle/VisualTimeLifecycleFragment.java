@@ -14,10 +14,9 @@ import java.util.List;
 import root.iv.cocomoapp.cocomo.ProjectParam;
 import root.iv.cocomoapp.ui.fragment.cocomo.visual.BaseVisualFragment;
 
-public class VisualWorkLifecycleFragment extends BaseVisualFragment {
-
-    public static VisualWorkLifecycleFragment getInstance(double m, double t) {
-        VisualWorkLifecycleFragment fragment = new VisualWorkLifecycleFragment();
+public class VisualTimeLifecycleFragment extends BaseVisualFragment {
+    public static VisualTimeLifecycleFragment getInstance(double m, double t) {
+        VisualTimeLifecycleFragment fragment = new VisualTimeLifecycleFragment();
         Bundle bundle = new Bundle();
         bundle.putDouble(ARG_MANS, m);
         bundle.putDouble(ARG_TIME, t);
@@ -30,11 +29,11 @@ public class VisualWorkLifecycleFragment extends BaseVisualFragment {
     public void fillContent() {
         List<ProjectParam> params = new LinkedList<>();
 
-        params.add(ProjectParam.getInstance("Планирование и определение требований (8%)", 0.08*mans));
-        params.add(ProjectParam.getInstance("Проектирование продукта (18%)", 0.18 * mans));
-        params.add(ProjectParam.getInstance("Детальное проектирование (25%)", 0.25 * mans));
-        params.add(ProjectParam.getInstance("Кодирование и тестирование отдельных модуей (26%)", 0.26 * mans));
-        params.add(ProjectParam.getInstance("Интеграция и тестирование (31%)", 0.31 * mans));
+        params.add(ProjectParam.getInstance("Планирование и определение требований (36%)", 0.36*time));
+        params.add(ProjectParam.getInstance("Проектирование продукта (36%)", 0.36 * time));
+        params.add(ProjectParam.getInstance("Детальное проектирование (18%)", 0.18 * time));
+        params.add(ProjectParam.getInstance("Кодирование и тестирование отдельных модуей (18%)", 0.18 * time));
+        params.add(ProjectParam.getInstance("Интеграция и тестирование (28%)", 0.28 * time));
 
         adapter.append(params);
 
@@ -43,7 +42,7 @@ public class VisualWorkLifecycleFragment extends BaseVisualFragment {
             entrys.add(new PieEntry((float)f.getValue(), f.getName()));
         }
 
-        PieDataSet dataSet = new PieDataSet(entrys, "Декомпозиция работ по стадиям ЖЦ");
+        PieDataSet dataSet = new PieDataSet(entrys, "Декомпозиция времени по стадиям ЖЦ");
 
 
         PieData data = new PieData(dataSet);
@@ -51,12 +50,12 @@ public class VisualWorkLifecycleFragment extends BaseVisualFragment {
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         diagram.animateXY(DURATION_ANIM, DURATION_ANIM);
         Description desc = new Description();
-        desc.setText("Распределение работ по ЖЦ");
+        desc.setText("Распределение времени по ЖЦ");
         diagram.setDescription(desc);
     }
 
     @Override
     public String getName() {
-        return "WORK LIFECYCLE";
+        return "TIME LIFECYCLE";
     }
 }

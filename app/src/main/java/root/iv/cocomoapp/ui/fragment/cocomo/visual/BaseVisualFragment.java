@@ -20,10 +20,13 @@ import root.iv.cocomoapp.ui.adapter.ProjectParamAdapter;
 public abstract class BaseVisualFragment extends Fragment {
     protected static final String ARG_MANS = "args:mans";
     protected static final String ARG_TIME = "args:time";
+    protected static final int DURATION_ANIM = 1500;
     protected double mans;
     protected double time;
+    @Nullable
     @BindView(R.id.listParams)
     protected RecyclerView listParams;
+    @Nullable
     @BindView(R.id.diagram)
     protected PieChart diagram;
     protected ProjectParamAdapter adapter;

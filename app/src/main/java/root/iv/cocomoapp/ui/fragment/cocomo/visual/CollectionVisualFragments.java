@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import root.iv.cocomoapp.ui.fragment.cocomo.visual.finance.VisualFinanceFragment;
+import root.iv.cocomoapp.ui.fragment.cocomo.visual.lifecicle.VisualTimeLifecycleFragment;
 import root.iv.cocomoapp.ui.fragment.cocomo.visual.lifecicle.VisualWorkLifecycleFragment;
+import root.iv.cocomoapp.ui.fragment.cocomo.visual.mans.VisualMansFragment;
 
 public class CollectionVisualFragments extends FragmentPagerAdapter {
-
-
     private BaseVisualFragment[] FRAGMENTS;
 
 
@@ -17,7 +17,9 @@ public class CollectionVisualFragments extends FragmentPagerAdapter {
         super(fm);
         FRAGMENTS = new BaseVisualFragment[] {
                 VisualFinanceFragment.getInstance(man, time),
-                VisualWorkLifecycleFragment.getInstance(man, time)
+                VisualWorkLifecycleFragment.getInstance(man, time),
+                VisualTimeLifecycleFragment.getInstance(man, time),
+                VisualMansFragment.getInstance(man, time)
         };
     }
 
@@ -36,4 +38,5 @@ public class CollectionVisualFragments extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return FRAGMENTS[position].getName();
     }
+
 }

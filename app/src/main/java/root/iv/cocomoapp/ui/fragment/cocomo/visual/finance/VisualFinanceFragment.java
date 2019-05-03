@@ -55,7 +55,7 @@ public class VisualFinanceFragment extends BaseVisualFragment {
 
         diagram.setData(data);
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        diagram.animateXY(5000, 5000);
+        diagram.animateXY(DURATION_ANIM, DURATION_ANIM);
         Description desc = new Description();
         desc.setText("Распределение ресурсов на разработку проекта");
         diagram.setDescription(desc);

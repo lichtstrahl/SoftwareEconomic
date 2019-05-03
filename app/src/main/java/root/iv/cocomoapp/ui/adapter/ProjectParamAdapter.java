@@ -26,7 +26,7 @@ public class ProjectParamAdapter extends RecyclerView.Adapter<ProjectParamAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(inflater.inflate(R.layout.item_finance, parent, false));
+        return new ViewHolder(inflater.inflate(R.layout.item_project_param, parent, false));
     }
 
     @Override
