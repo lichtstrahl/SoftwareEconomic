@@ -4,28 +4,26 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import root.iv.cocomoapp.ui.fragment.cocomo.visual.finance.VisualFinanceFragmentHolder;
-import root.iv.cocomoapp.ui.fragment.cocomo.visual.lifecicle.VisualWorkLifecycleFragmentHolder;
+import root.iv.cocomoapp.ui.fragment.cocomo.visual.finance.VisualFinanceFragment;
+import root.iv.cocomoapp.ui.fragment.cocomo.visual.lifecicle.VisualWorkLifecycleFragment;
 
 public class CollectionVisualFragments extends FragmentPagerAdapter {
-    private static final FragmentBuilder[] FRAGMENTS = new FragmentBuilder[] {
-            new VisualFinanceFragmentHolder(),
-            new VisualWorkLifecycleFragmentHolder()
-    };
 
 
-    private double m;
-    private double t;
+    private BaseVisualFragment[] FRAGMENTS;
+
 
     public CollectionVisualFragments(FragmentManager fm, double man, double time) {
         super(fm);
-        this.m = man;
-        this.t = time;
+        FRAGMENTS = new BaseVisualFragment[] {
+                VisualFinanceFragment.getInstance(man, time),
+                VisualWorkLifecycleFragment.getInstance(man, time)
+        };
     }
 
     @Override
     public Fragment getItem(int position) {
-        return FRAGMENTS[position].build(m, t);
+        return FRAGMENTS[position];
     }
 
     @Override
