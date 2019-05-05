@@ -48,6 +48,7 @@ public class Configuration {
     };
 
     @Nullable private CocomoModel model = CocomoModel.NORMAL;
+    private int kloc;
 
     /**
      *
@@ -94,5 +95,13 @@ public class Configuration {
             }
         }
         throw new IllegalStateException("Не удалось найти группу с указанным именем");
+    }
+
+    public int getKloc() {
+        return kloc;
+    }
+
+    public void setKloc(int kloc) {
+        this.kloc = kloc;
     }
 }

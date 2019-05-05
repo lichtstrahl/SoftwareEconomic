@@ -11,7 +11,7 @@ public class Cocomo {
 
     // TODO Сделать ввод KLOC
     public CocomoResult calculate() {
-        final int KLOC = 25;
+        final int KLOC = configuration.getKloc();
 
         // Универсальная длина. В строках указанного языка
         double kLoc = toFixed2(KLOC/configuration.getValue(Group.LANG));

@@ -13,11 +13,23 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputKLOCLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/inputKLOC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/inputKLOC"/>
+            </com.google.android.material.textfield.TextInputLayout>
             <LinearLayout
                 android:id="@+id/groups"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_below="@id/inputKLOCLayout">
                 <include layout="@layout/group_language" />
                 <TextView
                     android:layout_width="wrap_content"

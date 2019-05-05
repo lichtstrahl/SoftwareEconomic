@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -57,6 +58,8 @@ public class CocomoFragment extends Fragment {
     protected ChipGroup groupSced;
     @BindView(R.id.groupModel)
     protected ChipGroup groupModel;
+    @BindView(R.id.inputKLOC)
+    protected EditText inputKLOC;
     private Configuration configuration;
     private ActivityAPI activity;
 
@@ -155,6 +158,8 @@ public class CocomoFragment extends Fragment {
 
     @OnClick(R.id.buttonCalculate)
     public void clickCalculate() {
+        int kloc = Integer.parseInt(inputKLOC.getText().toString());
+        configuration.setKloc(kloc);
         Cocomo cocomo = new Cocomo(configuration);
         CocomoResult result = cocomo.calculate();
         activity.viewResult(result.getMan(), result.getTime());

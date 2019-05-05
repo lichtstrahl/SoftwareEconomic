@@ -45,4 +45,5 @@
     <string name="gl_ada">Ada</string>
     <string name="gl_access">Access</string>
     <string name="gl_delphi">Delphi</string>
+    <string name="inputKLOC">Ввод KLOC</string>
 </resources>
