@@ -48,7 +48,7 @@ public class VisualWorkLifecycleFragment extends BaseVisualFragment {
 
         PieData data = new PieData(dataSet);
         diagram.setData(data);
-        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         diagram.animateXY(DURATION_ANIM, DURATION_ANIM);
         Description desc = new Description();
         desc.setText("Распределение работ по ЖЦ");

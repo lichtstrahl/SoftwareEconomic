@@ -83,7 +83,7 @@ public class VisualMansFragment extends BaseVisualFragment {
 
         BarData data = new BarData(dataSet);
         barChart.setData(data);
-        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         barChart.animateY(DURATION_ANIM);
         Description desc = new Description();
         desc.setText("Привлечение сотрудников");
