@@ -133,7 +133,10 @@ public class CocomoFragment extends Fragment {
             configuration.setConfig(Group.SCED, n);
         });
 
-        groupModel.setOnCheckedChangeListener((g,n) -> configuration.setModel(n));
+        groupModel.setOnCheckedChangeListener((g,n) -> {
+            checkChip(g,n);
+            configuration.setModel(n);
+        });
 
         configuration = new Configuration();
 
