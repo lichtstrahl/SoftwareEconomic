@@ -10,9 +10,6 @@ import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.LinkedList;
@@ -76,6 +73,8 @@ public class VisualMansFragment extends BaseVisualFragment {
         for (int i = 0; i < paramMans.size(); i++) {
             double m = paramMans.get(i).getValue();
             double t = paramTime.get(i).getValue();
+            // ЧМ = Ч*М
+            // Ч = ЧM / М
             entrys.add(new BarEntry(i, Math.round(m/t), "Подсказка " + i));
         }
 

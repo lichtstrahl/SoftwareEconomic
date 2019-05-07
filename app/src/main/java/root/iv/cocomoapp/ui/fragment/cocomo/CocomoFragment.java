@@ -10,6 +10,8 @@ import android.widget.EditText;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
+import java.util.Locale;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -17,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import root.iv.cocomoapp.R;
+import root.iv.cocomoapp.app.App;
 import root.iv.cocomoapp.cocomo.Cocomo;
 import root.iv.cocomoapp.cocomo.CocomoResult;
 import root.iv.cocomoapp.cocomo.config.Configuration;
@@ -166,6 +169,7 @@ public class CocomoFragment extends Fragment {
         Cocomo cocomo = new Cocomo(configuration);
         CocomoResult result = cocomo.calculate();
         activity.viewResult(result.getMan(), result.getTime());
+        App.logI(String.format(Locale.ENGLISH, "Трудозатраты и время: %5.2f %5.2f", result.getMan(), result.getTime()));
     }
 
     @Override
