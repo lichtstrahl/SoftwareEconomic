@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuCocomo"
+        android:title="@string/cocomo"
+        android:icon="@drawable/ic_calculator"/>
+
+    <item
+        android:id="@+id/menuCocomo2"
+        android:title="@string/cocomo2"
+        android:icon="@drawable/ic_calculator"/>
+</menu>
