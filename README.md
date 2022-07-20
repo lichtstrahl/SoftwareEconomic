@@ -8,3 +8,6 @@
 Осовил пару новых для себя виджетов - FragmentPagerAdapter, Chip из Material Design, интересная либа для построения разнообразных анимированных графиков.  
 
 Глобальные проблемы с перегруженностью интерфейса осознаю =)
+
+# Демо
+https://youtube.com/shorts/BREeB_xHv-U?feature=share
